@@ -43,7 +43,7 @@ jobs:
         run: ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --uninstall "cmake;3.10.2.4988404" "cmake;3.18.1"
       - name: set up android ndk r25 (16k support)
         run: |
-          curl -L -s "https://storage.googleapis.com/android-build/builds/aosp-ndk-r25-release-linux-linux/12161346/ca7222ab71c8d5b8add70c147e6b14b8d05d64ea785766db4b1efe9f70eceba1/android-ndk-12161346-linux-x86_64.zip?GoogleAccessId=gcs-sign%40android-builds-project.google.com.iam.gserviceaccount.com&Expires=1757333494&Signature=SgoEcdVI8Ia4NlmxEC2TQAtKYaLKYYE074%2FLOzhq9Q0WcEPakUMRCHZu7Yq9MDC8U8TyDfQ1zpCl2fZur3i2G5tpsEqh%2FOBJamCcE5Sz96k5iq8u%2Fiaj8KJgWCr0zy%2Fz%2Fa9euEOma9SKTdj%2BhGpSV3fDKEyx6WYmaDRO9y9nIMHGEXnuaSRomrHtwzAHdqEV1UtQHxMiLlg1bxzapnjkDyS4UPgq5lyhRI8y6V%2Bj3h0kmq9N0B1q5Zg6Dsuezoxafd1NCdDU3wmgke0QqMXyXOWO4MrhyTtVYyRh6jTpdZ4kNaLiPI0asiEgFyBqqFhPBKex8kgHUSXzMWoXwl1qYg%3D%3D" -o ndk.zip
+          curl -L -s "https://storage.googleapis.com/android-build/builds/aosp-ndk-r25-release-linux-linux/12161346/ca7222ab71c8d5b8add70c147e6b14b8d05d64ea785766db4b1efe9f70eceba1/android-ndk-12161346-linux-x86_64.zip?GoogleAccessId=gcs-sign%40android-builds-project.google.com.iam.gserviceaccount.com&Expires=1757333861&Signature=lY1uHS9nZ4HsDjGdF5LbX9timehlZA89q26pu5%2BllKtrWQBVndPHptDuoI8B3ldx0M0FcByQRXFLaa7uoc8kk%2FzKus90oJm18RyzGucZrQvUVnhIAMM1M306PRSmlQ68ISO8UL2w60%2BqMjvaEUQm4pas7UaPJ%2BDJri%2FzqAa5SOMQVLz7ld2YJI8t%2BKwLrQ%2BPcF7oy7kptq5Qpl%2BUsdn6meeftr8rs0C3m9yFo95XNZtjIa4caOJ4DmV0H88ewKEF3%2FdB2%2FScouNL1j%2BuqpCE%2B9T3brVRedOGcjhoncgm%2BWaI1%2Be5JXCnda%2BUZP%2BySSccWwwECBuECyMcKbiPRxuZpA%3D%3D" -o ndk.zip
           unzip -q -o ndk.zip -d .ndk
           echo "ANDROID_NDK_ROOT=$PWD/.ndk/$(ls .ndk)" >> $GITHUB_ENV
       - name: run the build script
@@ -85,7 +85,7 @@ jobs:
         run: ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --uninstall "cmake;3.10.2.4988404" "cmake;3.18.1"
       - name: set up android ndk r25 (16k support)
         run: |
-          curl -L -s "https://storage.googleapis.com/android-build/builds/aosp-ndk-r25-release-linux-linux/12161346/ca7222ab71c8d5b8add70c147e6b14b8d05d64ea785766db4b1efe9f70eceba1/android-ndk-12161346-linux-x86_64.zip?GoogleAccessId=gcs-sign%40android-builds-project.google.com.iam.gserviceaccount.com&Expires=1757333494&Signature=SgoEcdVI8Ia4NlmxEC2TQAtKYaLKYYE074%2FLOzhq9Q0WcEPakUMRCHZu7Yq9MDC8U8TyDfQ1zpCl2fZur3i2G5tpsEqh%2FOBJamCcE5Sz96k5iq8u%2Fiaj8KJgWCr0zy%2Fz%2Fa9euEOma9SKTdj%2BhGpSV3fDKEyx6WYmaDRO9y9nIMHGEXnuaSRomrHtwzAHdqEV1UtQHxMiLlg1bxzapnjkDyS4UPgq5lyhRI8y6V%2Bj3h0kmq9N0B1q5Zg6Dsuezoxafd1NCdDU3wmgke0QqMXyXOWO4MrhyTtVYyRh6jTpdZ4kNaLiPI0asiEgFyBqqFhPBKex8kgHUSXzMWoXwl1qYg%3D%3D" -o ndk.zip
+          curl -L -s "https://storage.googleapis.com/android-build/builds/aosp-ndk-r25-release-linux-linux/12161346/ca7222ab71c8d5b8add70c147e6b14b8d05d64ea785766db4b1efe9f70eceba1/android-ndk-12161346-linux-x86_64.zip?GoogleAccessId=gcs-sign%40android-builds-project.google.com.iam.gserviceaccount.com&Expires=1757333861&Signature=lY1uHS9nZ4HsDjGdF5LbX9timehlZA89q26pu5%2BllKtrWQBVndPHptDuoI8B3ldx0M0FcByQRXFLaa7uoc8kk%2FzKus90oJm18RyzGucZrQvUVnhIAMM1M306PRSmlQ68ISO8UL2w60%2BqMjvaEUQm4pas7UaPJ%2BDJri%2FzqAa5SOMQVLz7ld2YJI8t%2BKwLrQ%2BPcF7oy7kptq5Qpl%2BUsdn6meeftr8rs0C3m9yFo95XNZtjIa4caOJ4DmV0H88ewKEF3%2FdB2%2FScouNL1j%2BuqpCE%2B9T3brVRedOGcjhoncgm%2BWaI1%2Be5JXCnda%2BUZP%2BySSccWwwECBuECyMcKbiPRxuZpA%3D%3D" -o ndk.zip
           unzip -q -o ndk.zip -d .ndk
           echo "ANDROID_NDK_ROOT=$PWD/.ndk/$(ls .ndk)" >> $GITHUB_ENV
       - name: run the build script
